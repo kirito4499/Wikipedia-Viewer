@@ -6,7 +6,6 @@ $(document).ready(() => {
     $('#search-text').keydown(event => {
         
         if (event.keyCode == 13) {
-            console.log("enter");
             search();
         }
     });
@@ -22,9 +21,10 @@ var search = () => {
             resArr = data.query.search;
             resArr.forEach(element => {
                 $('#result-div').append(
-                    "<div id='result' class='results'><h5><a href='#' target= '_blank'>" + element["title"] + "</a></h5><p = class='extract'>" + element["snippet"] + "</p></div>"
+                    "<div id='result' class='results'><h5><a href='#' target=''>" + element["title"] + "</a></h5><p = class='extract'>" + element["snippet"] + "</p></div>"
                 );
             })
+            $(".footer").hide();
         }
     });
 }
